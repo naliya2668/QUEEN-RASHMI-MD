@@ -15,7 +15,7 @@
 
  <p align="center">
 <a href="https://github.com/QuennRashmiMD">
-    <img src="https://telegra.ph/file/b91f52e7d0004ec84845a.jpg"  width="700px">
+    <img src="https://i.ibb.co/x36KRDp/3699c40895081b0a.jpg"  width="700px">
 <br>
  <br>
  <hr>
@@ -116,11 +116,14 @@ jobs:
 
 
    <a href="https://github.com/NethminaOfficial/"><img src="https://telegra.ph/file/7dd5b186621993e20b73b.jpg" width=80 height=80></a>
+   
    <a href="https://github.com/QueenRashmiMD/"><img src="https://i.ibb.co/bQRkY2R/cd97783d8ad3a600.jpg" width=80 height=80></a>
 
 ---
 
 |**[`Bhashitha Nethmina (NethminaOFC)`](https://github.com/NethminaOFC)**|
+
+|**[`Tharuwa MD`](https://github.com/thruwamd200489)**|
 
 ---
 
