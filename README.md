@@ -71,7 +71,7 @@
 
 ------------
  
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new-app?template=https://github.com/SILENTLOVER40/SILENT-SOBX-MD)
+[![Deploy]([https://ww.com](https://dashboard.heroku.com/))
 
 ----------
 
