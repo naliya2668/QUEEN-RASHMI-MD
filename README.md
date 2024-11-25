@@ -15,7 +15,7 @@
 
  <p align="center">
 <a href="https://github.com/QuennRashmiMD">
-    <img src="[https://telegra.ph/file/b91f52e7d0004ec84845a.jpg](https://i.ibb.co/x36KRDp/3699c40895081b0a.jpg)"  width="700px">
+    <img src="https://telegra.ph/file/b91f52e7d0004ec84845a.jpg"  width="700px">
 <br>
  <br>
  <hr>
