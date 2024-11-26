@@ -4,13 +4,15 @@ const {sleep} = require('../lib/functions')
 
 cmd({
     pattern: "restart",
+    alias: ["rebot","reboot"], 
+    react: "🐬",
     desc: "restart the bot",
     category: "owner",
     filename: __filename
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-if(!isOwner) return
+if (!isOwner) return;
 const {exec} = require("child_process")
 reply("*RESTARTING QUEEN-RASHMI-MD WABOT... 🔄 PLEASE WAIT A MOMENT... ⏳*")
 await sleep(1500)
