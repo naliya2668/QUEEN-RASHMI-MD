@@ -49,3 +49,54 @@ console.log(e)
 reply(e)
 }
 })
+
+//-----------video-dl---------------
+
+cmd({
+    pattern: "darama",
+    alias: ["video2"],
+    desc: "To download videos.",
+    react: "🎥",
+    category: "download",
+    filename: __filename
+},
+async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+try{
+if(!q) return reply("Please give me a url or title")  
+const search = await yts(q)
+const data = search.videos[0];
+const url = data.url
+    
+    
+let desc = `
+🎶 *QUEEN RASHMI MD WA-BOT SONG DOWNLOADER* 🎶
+
+┌───────────────────
+├ *ℹ️ Title:* ${data.title}
+├ *📚 channel:* ${data.author.name}
+├ *👁️‍🗨️ Views:* ${data.views}
+├ *🕘 Duration:* ${data.timestamp}
+├ *📆 Published:* ${data.ago}
+├ *📥 Size:* ${data.size}
+├ *🔗 Url:* ${data.url}
+└───────────────────
+
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴇᴛʜᴍɪɴᴀ ᴏꜰᴄ ||*
+`
+
+await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
+
+//download video
+
+let down = await fg.ytv(url)
+let downloadUrl = down.dl_url
+
+//send video message
+await conn.sendMessage(from,{video: {url:downloadUrl},mimetype:"video/mp4"},{quoted:mek})
+await conn.sendMessage(from,{document: {url:downloadUrl},mimetype:"video/mp4",fileName:data.title + ".mp4",caption:"*© ᴄʀᴇᴀᴛᴇᴅ ʙʏ sɪʟᴇɴᴛ ʟᴏᴠᴇʀ⁴³²*"},{quoted:mek})
+
+}catch(e){
+console.log(e)
+  reply('${e}')
+}
+})
