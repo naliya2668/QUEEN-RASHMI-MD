@@ -56,13 +56,13 @@
 <p align="center">
 <b>GET SESSION ID VIA PAIR CODE 01</b>
 <p align="center">
-<a href='https://pair-web-7740d6c1ca5f.herokuapp.com/' target="_blank"><img alt='Get Session ID' src='https://img.shields.io/badge/Click here to get your session id-blue?style=for-the-badge&logo=opencv&logoColor=white'/></a>
+<a href='https://queen-rashmi-md-3fcf23a5fafc.herokuapp.com/' target="_blank"><img alt='Get Session ID' src='https://img.shields.io/badge/Click here to get your session id-blue?style=for-the-badge&logo=opencv&logoColor=white'/></a>
 
 <hr>
 <p align="center">
 <b>GET SESSION ID VIA PAIR CODE 02</b>
 <p align="center">
-<a href='https://pair-web-7740d6c1ca5f.herokuapp.com/' target="_blank"><img alt='Get Session ID' src='https://img.shields.io/badge/Click here to get your session id-blue?style=for-the-badge&logo=opencv&logoColor=white'/></a>
+<a href='https://queen-rashmi-md-3fcf23a5fafc.herokuapp.com/' target="_blank"><img alt='Get Session ID' src='https://img.shields.io/badge/Click here to get your session id-blue?style=for-the-badge&logo=opencv&logoColor=white'/></a>
 <hr>
 
 ### <br>   ❖ DEPLOY_HEROKU ❖
