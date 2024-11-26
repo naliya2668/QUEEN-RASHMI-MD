@@ -4,8 +4,9 @@ const os = require("os")
 const {runtime} = require('../lib/functions')
 cmd({
     pattern: "system",
-    alias: ["status","botinfo"],
-    desc: "Chech up time , ram usage and more",
+    react: "♠️",
+    alias: ["uptime","status","runtime"],
+    desc: "cheack uptime",
     category: "main",
     filename: __filename
 },
@@ -19,11 +20,10 @@ let status = `┌─────────────────────
 └──────────────────────────
 > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴇᴛʜᴍɪɴᴀ ᴏꜰᴄ ||
 `
-return reply(`${status}`)
-  
+await conn.sendMessage(from,{image:{url:config.ALIVE_IMG},caption:`${status}`},{quoted:mek})
+
 }catch(e){
 console.log(e)
 reply(`${e}`)
-
 }
 })
