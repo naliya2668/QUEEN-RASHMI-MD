@@ -7,17 +7,11 @@ const axios = require('axios')
 cmd({
 
     pattern: "menu",
-
     react: "🛸",
-
     alias: ["panel","commands"],
-
-    desc: "Get bot\'s command list.",
-
+    desc: "Get bot command list.",
     category: "main",
-
     use: '.menu',
-
     filename: __filename
 
 },
