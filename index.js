@@ -85,7 +85,7 @@ console.log('PLUGINS FILES INSTALL SUCCESSFULLY ✅')
 console.log('QUEEN-RASHMI-MD CONNECTED TO WHATSAPP ENJOY ✅')
 
 let up = `*QUEEN-RASHMI-MD WABOT CONNECTED SUCCESSFULLY ✅*\n\n*PREFIX: [${prefix}]*\n\n*BOT OWNER:* https://wa.me/+94726268471?text=Hi☺️👋`;
-conn.sendMessage(conn.user.id, { image: { url: `https://i.ibb.co/x36KRDp/3699c40895081b0a.jpg` }, caption: up })
+conn.sendMessage(conn.user.id, { image: { url: `https://i.ibb.co/SwkX9jh/bf6301e6932f3c9e.jpg` }, caption: up })
 
 }
 })
