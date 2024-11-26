@@ -1,31 +1,30 @@
-const {readEnv} = require('../lib/database')
+const config = require('../config')
 const {cmd , commands} = require('../command')
+const os = require("os")
 const {runtime} = require('../lib/functions')
+const axios = require('axios')
 
 cmd({
+
     pattern: "menu",
-    desc: "Get command list",
+
+    react: "🛸",
+
+    alias: ["panel","commands"],
+
+    desc: "Get bot\'s command list.",
+
     category: "main",
+
+    use: '.menu',
+
     filename: __filename
+
 },
-async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+
+async(conn, mek, m,{from, l, quoted, body, isCmd, umarmd, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+
 try{
-const config = await readEnv();
-let menu= {
-main: '',
-download: '',
-group: '',
-owner: '',
-convert: '',
-search: ''
-};
-
-for (let i = 0; i < commands.length; i++) {
-if (commands[i].pattern && !commands[i].dontAddCommandList) {
-menu[commands[i].category] += `$(config.PREFIX)${commands[i].pattern}\n`;
- }
-}
-
 let madeMenu = `*QUEEN RASHMI MD WABOT*
 
 *Hᴇʟʟᴏ.... ${pushname}👋*
@@ -219,7 +218,8 @@ let madeMenu = `*QUEEN RASHMI MD WABOT*
 
 > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴇᴛʜᴍɪɴᴀ ᴏꜰᴄ ||
 `
-await conn.sendMessage(from,{image:{url:"https://i.ibb.co/x36KRDp/3699c40895081b0a.jpg"},caption:madeMenu},{quoted:mek})
+
+await conn.sendMessage(from,{image:{url:config.ALIVE_IMG},caption:madeMenu},{quoted:mek})
 
 }catch(e){
 console.log(e)
