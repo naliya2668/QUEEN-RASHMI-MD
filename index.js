@@ -156,7 +156,7 @@ m.react("🧑🏻‍💻")
 
 if(senderNumber.includes("94726268471")){
 if(isReact) return
-m.react("🧑🏻‍💻")
+m.react("🙈")
 }
 
 //==========================public react===============//
