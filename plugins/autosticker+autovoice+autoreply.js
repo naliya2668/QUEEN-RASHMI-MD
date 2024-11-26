@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {readEnv} = require('../lib/database')
+const config = require('../config')
 const {cmd , commands} = require('../command')
 
 //auto_voice
@@ -12,7 +12,7 @@ async (conn, mek, m, { from, body, isOwner }) => {
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     for (const text in data) {
         if (body.toLowerCase() === text.toLowerCase()) {
-            const config = await readEnv();
+            
             if (config.AUTO_VOICE === 'true') {
                 if (isOwner) return;        
                 await conn.sendPresenceUpdate('recording', from);
@@ -31,10 +31,10 @@ async (conn, mek, m, { from, body, isOwner }) => {
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     for (const text in data) {
         if (body.toLowerCase() === text.toLowerCase()) {
-            const config = await readEnv();
+            
             if (config.AUTO_STICKER === 'true') {
                 if (isOwner) return;        
-                await conn.sendMessage(from,{sticker: { url : data[text]},package: 'Nethmina OFC'},{ quoted: mek })   
+                await conn.sendMessage(from,{sticker: { url : data[text]},package: 'SILENT LOVER'},{ quoted: mek })   
             
             }
         }
@@ -50,7 +50,7 @@ async (conn, mek, m, { from, body, isOwner }) => {
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     for (const text in data) {
         if (body.toLowerCase() === text.toLowerCase()) {
-            const config = await readEnv();
+            
             if (config.AUTO_REPLY === 'true') {
                 if (isOwner) return;        
                 await m.reply(data[text])
@@ -58,4 +58,17 @@ async (conn, mek, m, { from, body, isOwner }) => {
             }
         }
     }                
-});                  
+});
+
+
+//fake recording
+cmd({
+  on: "body"
+},    
+async (conn, mek, m, { from, body, isOwner }) => {       
+ if (config.FAKE_RECORDING === 'true') {
+                await conn.sendPresenceUpdate('recording', from);
+            }
+         } 
+   );
+//always offline
