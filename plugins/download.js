@@ -1,6 +1,7 @@
 const {cmd , commands} = require('../command')
-const { ytsearch, ytmp3, ytmp4 } = require('@dark-yasiya/yt-dl.js'); // request package.json "@dark-yasiya/yt-dl.js": "latest"
-const yts = require('yt-search')
+const { ytsearch, ytmp3, ytmp4 } = require('@dark-yasiya/yt-dl.js') // request package.json "@dark-yasiya/yt-dl.js": "latest"
+const yts = require('yt-search');
+
 cmd({
     pattern: "play2",
     desc: "To download songs.",
