@@ -23,14 +23,20 @@ if(yt.results.length < 1) return reply("Results is not found !")
 let yts = yt.results[0]  
 const ytdl = await ytmp3(yts.url)
 		
-let ytmsg = `🎶 RASHIMI SONG DOWNLOADER 🎶
+let ytmsg = `
+*🎶 QUEEN RASHMI MD WA-BOT SONG DOWNLOADER 🎶*
 
+┌───────────────────
+├ ℹ️ Title: ${yts.title}
+├ 📚 channel: ${yts.author.name}
+├ 👁️‍🗨️ Views: ${yts.views}
+├ 🕘 Duration: ${yts.timestamp}
+├ 📆 Published: ${yts.ago}
+├ 📥 Size: ${yts.size}
+├ 🔗 Url: ${yts.url}
+└───────────────────
 
-🎵 *TITLE :* ${yts.title}
-🤵 *AUTHOR :* ${yts.author.name}
-⏱ *RUNTIME :* ${yts.timestamp}
-👀 *VIEWS :* ${yts.views}
-🖇️ *URL :* ${yts.url}
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴇᴛʜᴍɪɴᴀ ᴏꜰᴄ ||*
 `
 // SEND DETAILS
 await conn.sendMessage(from, { image: { url: yts.thumbnail || yts.image || '' }, caption: `${ytmsg}`}, { quoted: mek });
@@ -67,14 +73,19 @@ if(yt.results.length < 1) return reply("Results is not found !")
 let yts = yt.results[0]  
 const ytdl = await ytmp4(yts.url)
 		
-let ytmsg = `🎶 MP4 DOWNLOADER 🎶
+let ytmsg = `*🎶 QUEEN RASHMI MD WA-BOT VIDEO DOWNLOADER 🎶*
 
+┌───────────────────
+├ ℹ️ Title: ${yts.title}
+├ 📚 channel: ${yts.author.name}
+├ 👁️‍🗨️ Views: ${yts.views}
+├ 🕘 Duration: ${yts.timestamp}
+├ 📆 Published: ${yts.ago}
+├ 📥 Size: ${yts.size}
+├ 🔗 Url: ${yts.url}
+└───────────────────
 
-🎵 *TITLE :* ${yts.title}
-🤵 *AUTHOR :* ${yts.author.name}
-⏱ *RUNTIME :* ${yts.timestamp}
-👀 *VIEWS :* ${yts.views}
-🖇️ *URL :* ${yts.url}
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴇᴛʜᴍɪɴᴀ ᴏꜰᴄ ||*
 `
 // SEND DETAILS
 await conn.sendMessage(from, { image: { url: yts.thumbnail || yts.image || '' }, caption: `${ytmsg}`}, { quoted: mek });
