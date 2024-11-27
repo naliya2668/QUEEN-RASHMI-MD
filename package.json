@@ -29,6 +29,7 @@
         "@tobyg74/tiktok-api-dl": "1.0.13",
         "@vitalets/google-translate-api": "9.2.0",
         "@whiskeysockets/baileys": "git+https://github.com/prabathLK/Baileys-6.0.0.git#master",
+        "@dark-yasiya/yt-dl.js": "1.0.4",
         "api-dylux": "latest",
         "aptoide-scraper": "1.0.1",
         "awesome-phonenumber": "6.2.0",
@@ -118,6 +119,5 @@
         "mfiredlcore-vihangayt": "^1.0.0",
         "ytsearch-venom": "1.0.0",
         "yt-search": "^2.12.1",
-        "@dark-yasiya/yt-dl.js": "1.0.4"
     }
 }
