@@ -30,12 +30,12 @@ let ytmsg = `
 
 ┌───────────────────
 ├ *ℹ️ Title:* ${yts.title}
-├ *📚 channel:* ${data.author.name}
-├ *👁️‍🗨️ Views:* ${data.views}
-├ *🕘 Duration:* ${data.timestamp}
-├ *📆 Published:* ${data.ago}
-├ *📥 Size:* ${data.size}
-├ *🔗 Url:* ${data.url}
+├ *📚 channel:* ${yts.author.name}
+├ *👁️‍🗨️ Views:* ${yts.views}
+├ *🕘 Duration:* ${yts.timestamp}
+├ *📆 Published:* ${yts.ago}
+├ *📥 Size:* ${yts.size}
+├ *🔗 Url:* ${yts.url}
 └───────────────────
 
 > *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴇᴛʜᴍɪɴᴀ ᴏꜰᴄ ||*
