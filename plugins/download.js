@@ -1,7 +1,7 @@
 const {cmd , commands} = require('../command')
 const fg = require('dark-yasiya/yt-dl.js')
 const yts = require('yt-search')
-    cmd({
+cmd({
     pattern: "play2",
     desc: "To download songs.",
     react: "🎵",
