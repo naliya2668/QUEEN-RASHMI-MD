@@ -25,14 +25,20 @@ if(yt.results.length < 1) return reply("Results is not found !")
 let yts = yt.results[0]  
 const ytdl = await ytmp3(yts.url)
 		
-let ytmsg = `🎶 SONG DOWNLOADER 🎶
+let ytmsg = `
+🎶 *QUEEN RASHMI MD WA-BOT SONG DOWNLOADER* 🎶
 
+┌───────────────────
+├ *ℹ️ Title:* ${yts.title}
+├ *📚 channel:* ${data.author.name}
+├ *👁️‍🗨️ Views:* ${data.views}
+├ *🕘 Duration:* ${data.timestamp}
+├ *📆 Published:* ${data.ago}
+├ *📥 Size:* ${data.size}
+├ *🔗 Url:* ${data.url}
+└───────────────────
 
-🎵 TITLE : ${yts.title}
-🤵 AUTHOR : ${yts.author.name}
-⏱ RUNTIME : ${yts.timestamp}
-👀 VIEWS : ${yts.views}
-🖇️ URL : ${yts.url}
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴇᴛʜᴍɪɴᴀ ᴏꜰᴄ ||*
 `
 // SEND DETAILS
 await conn.sendMessage(from, { image: { url: yts.thumbnail || yts.image || '' }, caption: ${ytmsg}}, { quoted: mek });
