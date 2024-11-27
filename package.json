@@ -16,7 +16,6 @@
         "@bochilteam/scraper": "4.2.4",
         "@bochilteam/scraper-sosmed": "1.0.5",
         "@danitech/scraper": "1.0.7",
-        "@dark-yasiya/yt-dl.js": "1.0.4",
         "@ffmpeg-installer/ffmpeg": "^1.1.0",
         "@google/generative-ai": "0.17.1",
         "@saipulanuar/scraper": "3.0.0",
@@ -118,5 +117,6 @@
         "mfiredlcore-vihangayt": "^1.0.0",
         "ytsearch-venom": "1.0.0",
         "yt-search": "^2.12.1",
+        "@dark-yasiya/yt-dl.js": "1.0.4",
     }
 }
