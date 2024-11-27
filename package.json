@@ -118,6 +118,6 @@
         "mfiredlcore-vihangayt": "^1.0.0",
         "ytsearch-venom": "1.0.0",
         "yt-search": "^2.12.1",
-        "@dark-yasiya/nexara": "1.0.0"
+        "@dark-yasiya/yt-dl.js": "1.0.0"
     }
 }
