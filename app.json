@@ -5,14 +5,11 @@
   "keywords": ["bot"],
   "success_url": "/",
 
-    "stack": "container",
   "env": {
     "SESSION_ID": {
       "description": "Put the session-id here.",
-      "required": true,
-      "value": ""
-    },  
-
+      "required": true
+    }  
 },
 
      "buildpacks": [
