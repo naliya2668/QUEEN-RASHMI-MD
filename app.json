@@ -13,18 +13,6 @@
       "value": ""
     },  
     
-    "ALIVE_IMG": {
-      "description": "paste your image url if you don't have you can use this public url.",
-      "required": true,
-      "value": "https://i.ibb.co/x36KRDp/3699c40895081b0a.jpg"
-    }, 
-    
-    "ALIVE_MSG": {
-      "description": "paste your alive message hear.",
-      "required": true,
-      "value": "HII DEAR IM ONLINE.!!♻️"
-    },
-    
     "PREFIX": {
       "description": "paste your bot prefix note! Don't apply null prefix.",
       "required": true,
@@ -89,13 +77,6 @@
       "description": "Make it true if you want bot OwnerReact.",
       "required": true,
       "value": "true"
-    
-    }, 
-
-    "BOT_NAME": {
-      "description": "write hear your name.",
-      "required": true,
-      "value": "✦sɪʟᴇɴᴛ-sᴏʙx-ᴍᴅ✦"
     }, 
 
     "HEART_REACT": {
