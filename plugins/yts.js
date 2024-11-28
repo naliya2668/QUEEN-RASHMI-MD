@@ -6,7 +6,7 @@ cmd({
     alias: ["youtubesearch", "ytsearch"],
     desc: "Search for YouTube videos",
     category: "search",
-    react: "🔍",
+    react: "🔎",
     filename: __filename,
     use: '<search query>'
 },
