@@ -16,18 +16,21 @@ let dec = `*👋 Hello ${pushname}*
 
 *𝙸'𝚖 𝚀𝚄𝙴𝙴𝙽 𝚁𝙰𝚂𝙷𝙼𝙸-𝙼𝙳*
 
+*👋 Hello tharuwamd*
+
+*𝙸'𝚖 𝚀𝚄𝙴𝙴𝙽 𝚁𝙰𝚂𝙷𝙼𝙸-𝙼𝙳*
+
 *┌───────────◉▸▷*
-*├ʙᴏᴛ :- Qᴜᴇᴇɴ ᴅᴇᴡ-ᴍᴅ*
-*├ᴏᴡɴᴇʀ :- ᴅᴀʀᴋ ᴛᴇᴄʜ-x*
-*├ꜰʀᴏᴍ :- ᴋᴜʀᴜɴᴀɢᴀʟᴀ*
-*├ᴀɢᴇ :- 999+*
-*└───────────◉▸▷*
+*├ʙᴏᴛ :- Queen rashmi-ᴍᴅ*
+*├ᴏᴡɴᴇʀ :- tharuwamd*
+*├ꜰʀᴏᴍ :- RThnaphure*
+*├ᴀɢᴇ :- 999
+*└───────────◉
 
-*ᴍᴏʀᴇ ᴅɪᴛᴇʟꜱ -* https://wa.me/+94764984597?text=_ʜᴇʏ÷ᴅᴇᴡ_ᴍᴅ_ʏᴏᴜ_ᴅɪᴛᴇʟꜱ_👨🏻‍💻👑📍
+*ᴍᴏʀᴇ ᴅɪᴛᴇʟꜱ -* https://wa.me/+94726268471?text=_Queen-rashmi-md_👨🏻‍💻👑📍
 
-*ᴄʜᴀɴɴᴇʟ -* https://whatsapp.com/channel/0029VarGVHkIt5s1e1w6Nw2B
 
-*©ᴘᴏᴡᴇʀᴇᴅ ʙʏ Qᴜᴇᴇɴ ᴅᴇᴡ-ᴍᴅ*`
+
 await conn.sendMessage(from,{image:{url: `https://i.ibb.co/JnXhmNt/b396cf85d267ec08.jpg`},caption:dec},{quoted:mek});
 }catch(e){
 console.log(e)
