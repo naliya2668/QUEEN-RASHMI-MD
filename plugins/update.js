@@ -1,46 +1,94 @@
-
-const config = require('../config');
-let fs = require('fs');
-const { exec } = require('child_process');
+const { updateEnv, readEnv } = require('../lib/database');
+const EnvVar = require('../lib/mongodbenv');
 const { cmd } = require('../command');
 
 cmd({
     pattern: "update",
-    react: "🔄",
-    desc: "Update folder from GitHub",
-    category: "system",
-    use: '.update',
-    filename: __filename
-}, async (conn, mek, m, { from, reply }) => {
-    try {
-        const repoUrl = 'https://github.com/QueenRashmiMD/QUEEN-RASHMI-MD.git'; // لینک مخزن گیت‌هاب
-        const targetFolder = 'plugins'; // پوشه‌ای که باید به‌روز شود
+    alias: ["updateenv"],
+    desc: "Check and update environment variables",
+    category: "owner",
+    react: "🔰",
+    filename: __filename,
+},
+async (conn, mek, m, { from, q, reply, isOwner }) => {
+    if (!isOwner) return;
 
-        // بررسی وجود پوشه هدف
-        if (!fs.existsSync(targetFolder)) {
-            fs.mkdirSync(targetFolder); // ساخت پوشه در صورت عدم وجود
+    if (!q) {
+        return reply("🙇‍♂️ *Please provide the environment variable and its new value.* \n\nExample: `.update ALIVE_MSG: hello i am denuwan md`");
+    }
+
+    // Find the position of the first colon or comma
+    const colonIndex = q.indexOf(':');
+    const commaIndex = q.indexOf(',');
+
+    // Ensure we have a valid delimiter index
+    const delimiterIndex = colonIndex !== -1 ? colonIndex : commaIndex;
+    if (delimiterIndex === -1) {
+        return reply("🫠 *Invalid format. Please use the format:* `.update KEY:VALUE`");
+    }
+
+    // Extract key and value
+    const key = q.substring(0, delimiterIndex).trim();
+    const value = q.substring(delimiterIndex + 1).trim();
+    
+    // Extract mode if provided
+    const parts = value.split(/\s+/).filter(part => part.trim());
+    const newValue = value; // Use the full value as provided by the user
+    const mode = parts.length > 1 ? parts.slice(1).join(' ').trim() : '';
+    
+    const validModes = ['public', 'private', 'groups', 'inbox'];
+    const finalMode = validModes.includes(mode) ? mode : '';
+
+    if (!key || !newValue) {
+        return reply("🫠 *Invalid format. Please use the format:* `.update KEY:VALUE`");
+    }
+
+    // Specific checks for MODE, ALIVE_IMG, and AUTO_READ_STATUS
+    if (key === 'MODE' && !validModes.includes(newValue)) {
+        return reply(`😒 *Invalid mode. Valid modes are: ${validModes.join(', ')}*`);
+    }
+
+    if (key === 'ALIVE_IMG' && !newValue.startsWith('https://')) {
+        return reply("😓 *Invalid URL format. PLEASE GIVE ME IMAGE URL*");
+    }
+
+    if (key === 'AUTO_READ_STATUS' && !['true', 'false'].includes(newValue)) {
+        return reply("😓 *Invalid value for AUTO_READ_CMD. Please use `true` or `false`.*");
+    }
+
+    if (key === 'AUTO_READ_CMD' && !['true', 'false'].includes(newValue)) {
+        return reply("😓 *Invalid value for AUTO_READ_STATUS. Please use `true` or `false`.*");
+    }
+
+    if (key === 'AUTO_TYPING' && !['true', 'false'].includes(newValue)) {
+        return reply("😓 *Invalid value for AUTO_TYPING. Please use `true` or `false`.*");
+    }
+    if (key === 'AUTO_VOICE' && !['true', 'false'].includes(newValue)) {
+        return reply("😓 *Invalid value for AUTO_VOICE. Please use `true` or `false`.*");
+    }
+    if (key === 'OWNER_REACT' && !['true', 'false'].includes(newValue)) {
+        return reply("😓 *Invalid value for OWNER_REACT. Please use `true` or `false`.*");
+    }
+    if (key === 'AUTO_REACT' && !['true', 'false'].includes(newValue)) {
+        return reply("😓 *Invalid value for AUTO_REACT. Please use `true` or `false`.*");
+    }
+    try {
+        // Check if the environment variable exists
+        const envVar = await EnvVar.findOne({ key: key });
+
+        if (!envVar) {
+            // If the variable does not exist, fetch and list all existing env vars
+            const allEnvVars = await EnvVar.find({});
+            const envList = allEnvVars.map(env => `${env.key}: ${env.value}`).join('\n');
+            return reply(`❌ *The environment variable ${key} does not exist.*\n\n*Here are the existing environment variables:*\n\n${envList}`);
         }
 
-        // تعیین دستور مناسب گیت
-        const gitCommand = fs.existsSync(`${targetFolder}/.git`)
-            ? `git -C ${targetFolder} pull`
-            : `git clone ${repoUrl} ${targetFolder}`;
-
-        // اجرای دستور گیت
-        await new Promise((resolve, reject) => {
-            exec(gitCommand, (err, stdout, stderr) => {
-                if (err) {
-                    reject(`Git command failed: ${stderr}`);
-                } else {
-                    resolve(stdout);
-                }
-            });
-        });
-
-        // ارسال پیام موفقیت
-        await conn.sendMessage(from, { text: '*✅ Update completed successfully!*' }, { quoted: mek });
-    } catch (error) {
-        console.error(error);
-        reply(`*Error during update:* ${error.message}`);
+        // Update the environment variable
+        await updateEnv(key, newValue, finalMode);
+        reply(`✅ *Environment variable updated.*\n\n🗃️ *${key}* ➠ ${newValue} ${finalMode ? `\n*Mode:* ${finalMode}` : ''}`);
+        
+    } catch (err) {
+        console.error('Error updating environment variable:' + err.message);
+        reply("🙇‍♂️ *Failed to update the environment variable. Please try again.*" + err);
     }
 });
